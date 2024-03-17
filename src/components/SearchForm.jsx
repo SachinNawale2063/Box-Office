@@ -2,10 +2,15 @@
 import React from 'react'
 import { useState } from 'react';
 
+// 1) mount
+// 2) rerrender
+// 3) unmount
+
 const SearchForm = ({ onSearch }) => {
 
     const [searchOption, setSearchOption] = useState('shows');
     const [searchStr, setSearchStr] = useState("");
+
 
     const onSearchInputChange = (event) => {
         setSearchStr(event.target.value);
@@ -19,7 +24,7 @@ const SearchForm = ({ onSearch }) => {
         ev.preventDefault();
 
         const option = {
-            q : searchStr,
+            q: searchStr,
             searchOption
         }
 
