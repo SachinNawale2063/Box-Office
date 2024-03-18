@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react';
+import { useSearchStr } from '../lib/useSearchStr.js';
 
 // 1) mount
 // 2) rerrender
@@ -8,8 +9,8 @@ import { useState } from 'react';
 
 const SearchForm = ({ onSearch }) => {
 
+    const [searchStr, setSearchStr] = useSearchStr("");
     const [searchOption, setSearchOption] = useState('shows');
-    const [searchStr, setSearchStr] = useState("");
 
 
     const onSearchInputChange = (event) => {
