@@ -1,6 +1,7 @@
 import { useReducer, useEffect } from "react"
 import ShowCard from "./ShowCard"
 import { useStarredShows } from "../../lib/useStarred.js"
+import { FlexGrid } from "../common/FlexGrid.jsx"
 
 
 const ShowGrid = ({ shows }) => {
@@ -18,7 +19,7 @@ const ShowGrid = ({ shows }) => {
     }
 
     return (
-        <div>
+        <FlexGrid>
             {shows.map(data => (
                 <ShowCard key={data.show.id}
                     name={data.show.name}
@@ -28,7 +29,7 @@ const ShowGrid = ({ shows }) => {
                     isStarred={starredShows.includes(data.show.id)}
                 />
             ))}
-        </div>
+        </FlexGrid>
     )
 }
 
